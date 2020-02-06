@@ -2,11 +2,12 @@ import sys
 from pytube import YouTube
 from youtubeing import uniquelink
 
+sys.stdout = open(f".\streams.txt", "w", encoding="utf-8")
+
 
 def print_video_info(video_link):
 
     try:
-        sys.stdout = open(f".\streams.txt", "w", encoding="utf-8")
 
         video = YouTube(video_link)
 
