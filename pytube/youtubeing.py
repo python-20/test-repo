@@ -7,7 +7,7 @@ import requests
 url = ("https://www.youtube.com/feed/trending")
 page = requests.get(url)
 data = page.text
-soup = BeautifulSoup(data)
+soup = BeautifulSoup(data, features="html.parser")
 watch = "/watch?"
 uniquelink = []
 joinurl = "https://www.youtube.com"
@@ -21,5 +21,5 @@ for link in soup.find_all('a'):
         else:
             uniquelink.append(ytlinkurl)
 
-print(uniquelink)
+# print(uniquelink)
 # print(len(uniquelink))
